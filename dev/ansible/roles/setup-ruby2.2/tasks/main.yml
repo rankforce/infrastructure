@@ -11,7 +11,7 @@
     - python-pip
 - name: install ansible
   pip: name=ansible state=latest
-- name: git clone (webstream-framework)
+- name: git clone (rankforce)
   git: "repo={{ git_uri }} version={{ branch }} dest={{ workdir }} update=yes accept_hostkey=yes"
 - name: provisioning (rankforce)
   shell: "ansible-playbook -i 'localhost,' {{ workdir }}/ansible/setup-ruby2.2.yml"
