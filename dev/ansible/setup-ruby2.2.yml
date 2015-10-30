@@ -1,0 +1,6 @@
+---
+- hosts: rankforce-test
+  sudo: yes
+  user: vagrant
+  roles:
+    - setup-ruby2.2
