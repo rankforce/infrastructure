@@ -2,4 +2,5 @@
 - hosts: localhost
   connection: local
   roles:
+    - common
     - middlewares/ruby2.2
