@@ -4,3 +4,4 @@
   roles:
     - common
     - middlewares/ruby2.2
+    - applications/rankforce
