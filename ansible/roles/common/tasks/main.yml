@@ -1,4 +1,5 @@
 - name: install packages
+  tags: always
   yum: name={{ item }} state=latest
   with_items:
     - epel-release
@@ -8,9 +9,23 @@
     - libselinux-python
     - docker
 - name: restart docker
+  tags: always
   service: name=docker state=restarted
 - name: docker container clear
+  tags: ruby2.2
   shell: docker ps -a | grep '{{ item }}' | awk '{print $1}' | xargs --no-run-if-empty docker rm -f
   with_items:
-    - rankforce
+    - ruby22_rankforce
+  sudo: yes
+- name: docker container clear
+  tags: ruby2.1
+  shell: docker ps -a | grep '{{ item }}' | awk '{print $1}' | xargs --no-run-if-empty docker rm -f
+  with_items:
+    - ruby21_rankforce
+  sudo: yes
+- name: docker container clear
+  tags: ruby2.0
+  shell: docker ps -a | grep '{{ item }}' | awk '{print $1}' | xargs --no-run-if-empty docker rm -f
+  with_items:
+    - ruby20_rankforce
   sudo: yes

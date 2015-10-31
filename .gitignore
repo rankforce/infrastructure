@@ -1,3 +1,4 @@
 dev/.vagrant
+dev/secret_keys/rankforce/*.yml
 sandbox
 ansible/**/*/bitly.auth.yml

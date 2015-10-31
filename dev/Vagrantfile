@@ -11,13 +11,15 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     node.vm.hostname = "rankforce-test"
     node.vm.network :public_network, ip: "192.168.0.208", bridge: "en1: Wi-Fi (AirPort)"
     node.vm.network :forwarded_port, guest: 22, host: 2234
-
-    config.vm.provision :ansible do |ansible|
-      ansible.playbook = "ansible/setup.yml"
-      ansible.tags = "ruby2.2"
-      ansible.host_key_checking = false
-    end
   end
+
+  config.vm.provision :ansible do |ansible|
+    ansible.playbook = "ansible/setup.yml"
+    ansible.tags = "ruby2.2"
+    ansible.host_key_checking = false
+  end
+
+  config.vm.synced_folder "secret_keys", "/var/tmp/secret_keys"
 
   config.vm.provider :virtualbox do |vb|
     vb.customize ["modifyvm", :id, "--memory", 1024]
