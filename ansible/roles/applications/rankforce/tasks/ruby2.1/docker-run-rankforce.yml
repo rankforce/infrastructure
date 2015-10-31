@@ -2,10 +2,10 @@
   shell: docker run -itd --name ruby21_rankforce docker/ruby /sbin/init
   sudo: yes
 - name: copy ansible files to container (rankforce)
-  shell: tar -cv * | sudo docker exec -i ruby21_rankforce tar x -C /root/ansible chdir=ansible
+  shell: tar -cv * | sudo docker exec -i ruby21_rankforce tar x -C /root/ansible
   sudo: yes
 - name: copy config files to container (rankforce)
-  shell: tar -cv * | sudo docker exec -i ruby21_rankforce tar x -C /root/rankforce-core/config chdir=ansible
+  shell: tar -cv * | sudo docker exec -i ruby21_rankforce tar x -C /root/secret_keys chdir=/var/tmp/secret_keys
   sudo: yes
 - name: docker provision (rankforce)
   shell: docker exec -t ruby21_rankforce ansible-playbook -i "localhost," /root/ansible/settings.yml
