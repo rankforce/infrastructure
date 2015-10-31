@@ -1,0 +1,11 @@
+- include: always_task.yml
+  tags: always
+- name: provisioning (rankforce on ruby2.2)
+  shell: "ansible-playbook -t ruby2.2 -i 'localhost,' {{ workdir }}/ansible/setup.yml"
+  tags: ruby2.2
+- name: provisioning (rankforce on ruby2.1)
+  shell: "ansible-playbook -t ruby2.1 -i 'localhost,' {{ workdir }}/ansible/setup.yml"
+  tags: ruby2.1
+- name: provisioning (rankforce on ruby2.0)
+  shell: "ansible-playbook -t ruby2.0 -i 'localhost,' {{ workdir }}/ansible/setup.yml"
+  tags: ruby2.0

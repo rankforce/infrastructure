@@ -1,3 +1,9 @@
 - name: docker run (rankforce)
   shell: docker run -itd --name rankforce docker/ruby /sbin/init
   sudo: yes
+- name: copy ansible files to container (rankforce)
+  shell: tar -cv * | sudo docker exec -i rankforce tar x -C /root/ansible chdir=ansible
+  sudo: yes
+- name: docker provision (rankforce)
+  shell: docker exec -t rankforce ansible-playbook -i "localhost," /root/ansible/settings.yml
+  sudo: yes

@@ -3,5 +3,5 @@
   connection: local
   roles:
     - common
-    - middlewares/ruby2.2
+    - middlewares/ruby
     - applications/rankforce

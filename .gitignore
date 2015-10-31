@@ -1,2 +1,8 @@
 dev/.vagrant
 sandbox
+ansible/roles/applications/files/config/evernote.auth.yml
+ansible/roles/applications/files/config/twitter.auth.yml
+ansible/roles/applications/files/config/twitter.auth.test.yml
+ansible/roles/applications/files/config/bitly.auth.yml
+ansible/roles/applications/files/config/mongolab.yml
+ansible/roles/applications/files/config/mongolab.test.yml
