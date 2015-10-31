@@ -13,7 +13,8 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     node.vm.network :forwarded_port, guest: 22, host: 2234
 
     config.vm.provision :ansible do |ansible|
-      ansible.playbook = "ansible/setup-ruby2.2.yml"
+      ansible.playbook = "ansible/setup.yml"
+      ansible.tags = "ruby2.2"
       ansible.host_key_checking = false
     end
   end
