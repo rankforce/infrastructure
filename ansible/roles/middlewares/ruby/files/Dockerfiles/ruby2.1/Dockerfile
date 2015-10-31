@@ -1,14 +1,8 @@
 FROM ruby:2.1.7
-MAINTAINER Ryuichi Tanaka <mapserver2007@gmail.com>
-RUN mkdir /root/ansible
-RUN mkdir /root/secret_keys
+
+RUN mkdir /root/ansible && /root/secret_keys
 WORKDIR /root/ansible
 
-RUN yum -y install sudo
-RUN yum -y install gcc
-RUN yum -y install git
-RUN yum -y install python-devel
-RUN yum -y install python-setuptools
-RUN yum -y install epel-release
-RUN yum -y install python-pip
-RUN pip install ansible
+RUN apt-get update \
+  && apt-get install -y sudo gcc git python-dev python-setuptools python-pip \
+  && pip install markupsafe ansible
