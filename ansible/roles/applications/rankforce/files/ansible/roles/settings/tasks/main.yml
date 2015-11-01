@@ -1,4 +1,4 @@
 - name: get rankforce from repository
-  git: "repo={{ repo_uri }} version={{ branch }} dest=. update=yes accept_hostkey=yes"
+  git: "repo={{ repo_uri }} version={{ branch }} dest={{ source_dir }} update=yes accept_hostkey=yes"
 - name: bundle install
-  bundler: state=present chdir=rankforce-core
+  shell: bundle install chdir={{ source_dir }}

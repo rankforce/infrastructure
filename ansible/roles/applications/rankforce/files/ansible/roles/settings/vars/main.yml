@@ -1,2 +1,3 @@
 repo_uri: git://github.com/rankforce/rankforce-core.git
 branch: master
+source_dir: /root/rankforce
