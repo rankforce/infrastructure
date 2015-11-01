@@ -1,4 +1,4 @@
-FROM ruby:2.1.7
+FROM ruby:2.1.7-onbuild
 
 RUN mkdir /root/ansible /root/secret_keys
 WORKDIR /root/ansible
