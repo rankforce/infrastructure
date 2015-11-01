@@ -7,21 +7,21 @@
     dest="{{ source_dir }}/Gemfile"
     state=present
     regexp='^ruby.*'
-    line='ruby 2.0.0'
+    line="ruby '2.0.0'"
 - name: rewrite Gemfile
   tags: ruby2.1
   lineinfile: >-
     dest="{{ source_dir }}/Gemfile"
     state=present
     regexp='^ruby.*'
-    line='ruby 2.1.7'
+    line="ruby '2.1.7'"
 - name: rewrite Gemfile
   tags: ruby2.2
   lineinfile: >-
     dest="{{ source_dir }}/Gemfile"
     state=present
     regexp='^ruby.*'
-    line='ruby 2.2.3'
+    line="ruby '2.2.3'"
 - name: bundle install
   tags: always
   shell: bundle install chdir={{ source_dir }}
