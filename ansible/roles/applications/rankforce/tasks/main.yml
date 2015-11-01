@@ -1,3 +1,6 @@
+- name: copy ansible files
+  tags: always
+  copy: src=ansible dest=/home/vagrant/applications/rankforce
 - include: ruby2.0/docker-run-rankforce.yml
   tags: ruby2.0
 - include: ruby2.1/docker-run-rankforce.yml
