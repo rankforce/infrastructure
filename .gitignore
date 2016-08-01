@@ -1,4 +1,3 @@
-dev/.vagrant
-dev/secret_keys/rankforce/*.yml
+test/.vagrant
+test/setup/setup.retry
 sandbox
-ansible/**/*/bitly.auth.yml

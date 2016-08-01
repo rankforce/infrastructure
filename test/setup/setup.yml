@@ -1,0 +1,8 @@
+---
+- hosts: rankforce-test
+  become: yes
+  user: vagrant
+  roles:
+    - initialize
+    - ruby
+    - application-settings
